@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <link rel=properties href=settings.properties>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+
+  <h1>Welcome to the Shop</h1>
+
+  <!-- Total display button -->
+  <button id="actionBtn">Total: $<span id="total">0.00</span></button>
+
+  <!-- Product container -->
+  <div id="productsContainer"></div>
+
+  <!-- Bought products list -->
+  <h2>Purchased Products:</h2>
+  <ul id="buyedList"></ul>
+
+  <script src="script.js"></script>
+  <script>
+    // Load settings.properties for title
+    fetch('settings.properties')
+      .then(r => r.text())
+      .then(t => {
+        const props = {};
+        t.split('\n').forEach(line => {
+          const [k, v] = line.split('=');
+          if (k && v) props[k.trim()] = v.trim();
+        });
+        if (props.Title) document.title = props.Title;
+      });
+  </script>
+</body>
+</html>

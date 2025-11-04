@@ -1,0 +1,6 @@
+[
+  { "name": "Tire", "p": 5 },
+  { "name": "Oil", "p": 10 },
+  { "name": "Brake Pads", "p": 15 },
+  { "name": "Pad", "p": 50 }
+]
